@@ -1,0 +1,87 @@
+1. REGIONS table
+insert into regions (region_id, region_name) values (3412, 'EAST');
+insert into regions (region_id, region_name) values (2386, 'WEST');
+insert into regions (region_id, region_name) values (3585, 'SOUTHEAST');
+insert into regions (region_id, region_name) values (6448, 'NORTH');
+insert into regions (region_id, region_name) values (4871, 'SOUTH');
+
+2. COUNTRIES table
+insert into regions (country_id, country_name, region_id) values ('AA', 'VietNam', 3585);
+insert into regions (country_id, country_name, region_id) values ('BB', 'ThaiLan', 3412);
+insert into regions (country_id, country_name, region_id) values ('CC', 'Lao', 6448);
+insert into regions (country_id, country_name, region_id) values ('DD', 'Campuchia', 4871);
+insert into regions (country_id, country_name, region_id) values ('EE', 'Singapore', 2386);
+
+3. JOBS table
+insert into jobs (job_id, job_title, min_salary, max_salary) values ('AH416', 'BanHang', 50000, 100000);
+insert into jobs (job_id, job_title, min_salary, max_salary) values ('AH417', 'KySuMayTinh', 100000, 200000);
+insert into jobs (job_id, job_title, min_salary, max_salary) values ('AH418', 'KeToan', 40000, 80000);
+insert into jobs (job_id, job_title, min_salary, max_salary) values ('AH419', 'ThuKy', 70000, 90000);
+insert into jobs (job_id, job_title, min_salary, max_salary) values ('AH420', 'QuanLyDuAn', 300000, 350000);
+
+4. LOCATIONS table
+insert into locations (location_id, street_address, postal_code, city, state_province, country_id) 
+values (1561, 'Itaxa 126 Nguyen Thi Minh Khai', '950000', 'HoChiMinh', 'Quan10', 'AA');
+insert into locations (location_id, street_address, postal_code, city, state_province, country_id) 
+values (9999, 'Siam Pagaron 456 Ploenchit', 'PS485138', 'Bangkok', ' ', 'BB');
+insert into locations (location_id, street_address, postal_code, city, state_province, country_id) 
+values (4862, 'Riverside 33 Ton Duc Thang', 'AW621884', 'Vientiane', 'Aloha', 'CC');
+insert into locations (location_id, street_address, postal_code, city, state_province, country_id) 
+values (2341, 'Golden Temple 118 Sisowath Street', '14206', 'Phoum Deum', 'Prey Veng', 'DD');
+insert into locations (location_id, street_address, postal_code, city, state_province, country_id) 
+values (7146, 'Cascade Present 24A Tanglin Road', '432765', 'Singapore', 'Tanglin', 'EE');
+
+5.DEPARTMENTS table
+insert into departments(department_id, department_name, manager_id, location_id) 
+values (2435, 'IT', NULL, 9999);
+insert into departments(department_id, department_name, manager_id, location_id) 
+values (2436, 'Sales', NULL, 1561);
+insert into departments(department_id, department_name, manager_id, location_id) 
+values (2437, 'Finance', NULL, 7146);
+insert into departments(department_id, department_name, manager_id, location_id) 
+values (2438, 'Accounting', NULL, 2341);
+insert into departments(department_id, department_name, manager_id, location_id) 
+values (2439, 'Marketing', NULL, 4862);
+
+6. EMPLOYEES table
+insert into employees (employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct, manager_id, department_id) 
+values (34451, 'Chou', 'Ming', 'chouming@gmail.com', '0124512612', '13-feb-2010', 'AH417', 150000, NULL, NULL, 2435);
+insert into employees (employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct, manager_id, department_id) 
+values (34485, 'Lucifer', 'John', 'johnluci@gmail.com', '0128413415', '20-Oct-2013', 'AH417', 100000, NULL, 34451, 2435);
+insert into employees (employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct, manager_id, department_id) 
+values (85500, 'Ben', 'Sparrow', 'ben@gmail.com', '0199995541', '10-dec-2009', 'AH421', 550000, NULL, NULL, 2439);
+insert into employees (employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct, manager_id, department_id) 
+values (85510, 'Rose', 'Roman', 'rose@gmail.com', '0128413415', '11-Oct-2011', 'AH419', 75000, 0.23, 85500, 2438);
+insert into employees (employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct, manager_id, department_id) 
+values (85533, 'Janes', 'Robert', 'janesrob@gmail.com', '0184132445', '11-feb-2014', 'AH418', 50000, 0.12, 85510, 2438);
+insert into employees (employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct, manager_id, department_id) 
+values (85568, 'Jack', 'Pete', 'jackd@gmail.com', '0148115524', '11-feb-2014', 'AH420', 300000, NULL, NULL, 2437);
+insert into employees (employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct, manager_id, department_id) 
+values (85541, 'Yumin', 'Kawa', 'kawa@gmail.com', '0164164147', '8-dec-2015', 'AH416', 300000, 0.05, 85510, 2436);
+insert into employees (employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct, manager_id, department_id) 
+values (87295, 'Dean', 'Quincy', 'dean@gmail.com', '0123443210', '13-feb-2010', 'AH420', 325000, NULL, NULL, 2437);
+insert into employees (employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, commission_pct, manager_id, department_id) 
+values (89316, 'Kyle', 'Grey', 'kyle@gmail.com', '012534579', '13-feb-2010', 'AH418', 55000, NULL, NULL, 2439);	
+
+7. JOBHISTORY table
+insert into job_history (employee_id, start_date, end_date, job_id, department_id) 
+values (34451, '13-feb-2010', '21-oct-2015', 'AH417', 2435);
+insert into job_history (employee_id, start_date, end_date, job_id, department_id) 
+values (34485, '20-Oct-2013', '20-Oct-2014', 'AH417', 2435);
+insert into job_history (employee_id, start_date, end_date, job_id, department_id) 
+values (85500, '10-dec-2009', '4-jan-2020', 'AH421', 2439);
+insert into job_history (employee_id, start_date, end_date, job_id, department_id) 
+values (85510, '11-Oct-2011', '30-may-2015', 'AH419', 2438);
+insert into job_history (employee_id, start_date, end_date, job_id, department_id) 
+values (85533, '11-feb-2014', '20-Nov-2016', 'AH418', 2438);
+insert into job_history (employee_id, start_date, end_date, job_id, department_id) 
+values (85568, '11-feb-2014', '25-feb-2017', 'AH420', 2437);
+
+
+UPDATE EMPLOYEES
+SET JOB_ID = 'AH419', DEPARTMENT_ID = 2439
+WHERE EMPLOYEE_ID = 87295;
+
+UPDATE EMPLOYEES
+SET JOB_ID = 'AH420', DEPARTMENT_ID = 2437
+WHERE EMPLOYEE_ID = 89316;
